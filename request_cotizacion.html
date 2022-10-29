@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<head>
+    <script></script>
+    <script type="text/javascript" src="main.js"></script>
+    <style>
+        * {box-sizing: border-box;}
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #e9e9e9;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        .topnav a.logout {
+            background-color: red;
+            color: white;
+        }
+
+        .topnav .login-container {
+            float: right;
+        }
+
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+            width:120px;
+        }
+
+        .topnav .login-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background-color: #555;
+            color: white;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .topnav .login-container button:hover {
+            background-color: green;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav .login-container {
+                float: none;
+            }
+            .topnav a, .topnav input[type=text], .topnav .login-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+
+<body onload="init()">
+
+<div class="topnav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="active" href="#contact">Solicitar Cotizacion</a>
+    <div class="login-container" id="mostrar_usuario">
+        <form>
+            <input type="text" placeholder="Username" id="uname">
+            <input type="text" placeholder="Password" id="pwd">
+            <button id="loginButton">Login</button>
+        </form>
+    </div>
+</div>
+
+<p>
+<fieldset id="addForm">
+    <legend>Add item</legend>
+    <label>Name</label>
+    <input id="nameInput">
+    <label>Author</label>
+    <input id="authorInput">
+    <label>Year</label>
+    <input id="yearInput">
+    <label>ISBN</label>
+    <input id="isbnInput">
+    <button id="addButton">Add</button>
+</fieldset>
+</p>
+
+<p>
+<fieldset id="deleteForm">
+    <legend>Delete item</legend>
+    <label>ISBN</label>
+    <input id="isbnDelInput">
+    <button id="delButton">Delete</button>
+</fieldset>
+</p>
+
+<table id="books-table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>ISBN</th>
+    </tr>
+    </thead>
+    <tbody id="books-table-body">
+    </tbody>
+</table>
+
+</body>
+</html>
